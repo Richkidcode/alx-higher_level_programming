@@ -1,74 +1,39 @@
+#!/usr/bin/python3
 
-``0-add_integer`` code testing
+def add_integer(a, b=98):
+    """
+    Adds two integers.
 
-Using ``add_integer`` function
+    Args:
+    a (int or float): The first number.
+    b (int or float): The second number. Defaults to 98.
 
-test cases for the function ``add_integer``.
-import function:
-    
-    >>> add_integer = __import__('0-add_integer').add_integer
+    Returns:
+    int: The addition of a and b.
 
-How to use it:
+    Raises:
+    TypeError: If either a or b is not an integer or float.
+    """
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
 
-Test_1 adding two integers
+    return int(a) + int(b)
+#!/usr/bin/python3
+"""My addition module
 
-    >>> add_integer(2, 1)
-    3
+add_integer: adds two integers together
 
-Test_2 adding float with integer cast to the small int value
+"""
 
-    >>> add_integer(3.2, 2)
-    5
 
-Test_3 adding int with str
-
-    >>> add_integer("3", 4)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-Test_4 adding str with int
-
-    >>> add_integer(3, "4")
-    Traceback (most recent call last):
-    TypeError: b must be an integer
-
-Test_5 adding None with int
-
-    >>> add_integer(None, 4)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-Test_6 adding just first parameter as None
-
-    >>> add_integer(None)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-Test_7 adding negative numbers
-
-    >>> add_integer(-3, -4)
-    -7
-
-Test_8 adding negative float numbers
-
-    >>> add_integer(-3.4, -4.6)
-    -7
-
-Test_9 second argument as None
-
-    >>> add_integer(-3.4, None)
-    Traceback (most recent call last):
-    TypeError: b must be an integer
-
-Test_10 both arguments as strings
-
-    >>> add_integer("-3.4", "3")
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-Test_11 No arguments
-
-    >>> add_integer()
-    Traceback (most recent call last):
-    TypeError: add_integer() missing 1 required positional argument: 'a'
-
+def add_integer(a, b=98):
+    """Returns a + b
+    Args: a and b (int): the numbers to add
+    """
+    if not isinstance(a, (int, float)):
+        raise TypeError("a must be an integer")
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
+    return int(a) + int(b)
